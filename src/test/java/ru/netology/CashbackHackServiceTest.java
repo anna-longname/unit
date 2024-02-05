@@ -1,27 +1,28 @@
 package ru.netology;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class CashbackHackServiceTest {
 
     @Test
-    public void calculateRemain() {
+    public void remain() {
+
         new CashbackHackService();
-        int amount = 1700;
+        int amount = 500;
 
         int actual;
         int boundary = 1000;
         actual = boundary - amount % boundary;
-        int expected = 300;
+        int expected = 500;
 
-    assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
 
     @Test
-    public void calculateOtherRemain() {
+    public void OtherRemain() {
         new CashbackHackService();
         int amount = 1000;
 
@@ -30,6 +31,7 @@ public class CashbackHackServiceTest {
         actual = boundary - amount % boundary;
         int expected = 0;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 }
+
